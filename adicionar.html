@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" required>
+            </div>
+            <div class="mb-3">
+                <label for="preco" class="form-label">Preço</label>
+                <input type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" required>
+            </div>
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="quantidade" class="form-label">Quantidade</label>
+                <textarea class="form-control" id="quantidade" rows="3" placeholder="Digite a quantidade disponivel do produto" required></textarea>
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="cadastrarProduto(event)">Cadastrar Produto</button>
+        </form>
+    </main>
+    <script src="adm.js"></script>
+</body>
+</html>

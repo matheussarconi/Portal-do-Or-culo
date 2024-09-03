@@ -1,0 +1,53 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: white;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 30% ,rgb(255, 255, 255) 400% );
+}
+main{
+    height: 100vh;
+}
+.divPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-left: 35%;
+    margin-top: 80px;
+    border-radius: 20px;
+    width: 30%;
+    height: 80vh;
+    flex-direction: column;
+    gap: 10vh;
+}
+.btCadastrar, .btLogin, .btAdm{
+    display: flex;
+    justify-content: center;
+    font-size: 230%;
+    border: none;
+    width: 20vw;
+    /* color: white; */
+    /* background-color: black; */
+    border-radius: 3vh;
+    transition: transform 1s;
+}
+.btAdm{
+    width: 20vw;
+}
+
+.btCadastrar:hover {
+    transform: scale(1.2);
+}
+.btLogin:hover {
+    transform: scale(1.2);
+}
+
+.btAdm:hover {
+    transform: scale(1.2);
+}
+
+
+

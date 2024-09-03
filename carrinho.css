@@ -1,0 +1,99 @@
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, black 30% ,white 400% );
+    height: 10vh ;
+    color: white;
+}
+main{
+    height: 100vh;
+    background: linear-gradient(to top, black 30% , white 400%);
+    display: flex;
+    /* align-items: center; */
+    color: white;
+    flex-direction: column;
+}
+.nomeSite{
+    margin-left: 2rem;
+    font-size: 3rem;
+}
+.logo{
+    margin-top: 2rem;
+    height: 17vh;
+    width: 8vw;
+}
+.linhaDeCima{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 5rem;
+}
+
+.bordaProdutos{
+    background: linear-gradient(#201f1f, #383737);
+    border-radius: 2rem;
+    height: 43vh;
+    width: 20rem;
+    margin-top: 1.5rem;
+    
+}
+
+.divProdutos{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.produtosImagem{
+    display: flex;
+    justify-content: center;
+    height: 38vh;
+    align-items: center;
+    /* margin-left: 2rem; */
+    transition: transform 1s;
+    /* width: 18rem; */
+}.produtosImagem:hover{
+    transform: scale(1.2);
+}
+
+
+.botaoCarrinho{
+    display: flex;
+    background: transparent;
+    justify-content: flex-start; /* Alterado de 'end' para 'flex-start' */
+    border: none;
+    /* height: ; */
+    margin-bottom: 8%;
+    transition: transform 1s;
+    /* margin-right: 200000px; */
+    /* margin-top: 15rem; */
+}.botaoCarrinho:hover{
+    transform: scale(1.2);
+}
+
+.carrinhoIcon{
+    height: 1000%;
+    width: 1000%; 
+    /* margin-left: rem; */
+}
+.nomeProduto{
+    display: flex;
+    color: white;
+    margin-left: 2%;
+    font-size: 130%;
+    /* width: 0.1rem; */
+    /* margin-bottom: 2rem; */
+}
+
+.preco{
+    display: flex;
+    margin-left: 1rem;
+}
