@@ -1,12 +1,12 @@
 <h1>Portal do Oráculo</h1>
 
-##Informações do trabalho
+<h2>Informações do trabalho</h2>
 *Banco de dados
 *Rota de Login
 *Rota de Cadastro de usuario
 *Rota de Cadastro de produtos
 
-##Criando o banco de dados
+<h2>Criando o banco de dados</h2>
 
 Criando a databse
 ````
@@ -55,7 +55,7 @@ Para testar
 ````
 select * from produtos;
 ````
-##Criando a API
+<h2>Criando a API</h2>
 Abrir o gitbash e usar a pasta no terminal
 ````
 cd lojaTecnico
@@ -74,7 +74,7 @@ O que cada pacote faz:
 *mysql2: Conectar e mandar comandos SQL para o banco;
 *cors: Mecanismo para adicionar cabeçalhos HTTP que informam aos navegadores para permitir que uma aplicação web seja executada em origem e acesse recursos de outra origem diferente
 
-##Abrir o arquivo no VSCODE
+<h2>Abrir o arquivo no VSCODE</h2>
 ````
 code . 
 ````
