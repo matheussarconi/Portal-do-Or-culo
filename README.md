@@ -11,15 +11,18 @@
 <h2>Criando o banco de dados</h2>
 
 <h3>Criando a databse</h3>
+
 ````
 create database PortalDoOraculo;
 ````
 <h3>Selecionar a database</h3>
+
 ````
 use PortalDoOraculo;
 ````
 
 <h3>Criar a tabela de usuarios</h3>
+
 ````
 create table usuario(
     id_usuario int not null primary key auto_increment,
@@ -29,6 +32,7 @@ create table usuario(
 );
 ````
 <h3>Criar a tabela de produtos</h3>
+
 ````
 create table produtos(
     id_produtos int not null primary key auto_increment,
@@ -39,7 +43,8 @@ create table produtos(
 );
 
 ````
-Criar tabela de carrinho fazendo um link com usuario e produtos
+<h3>Criar tabela de carrinho fazendo um link com usuario e produtos</h3>
+
 ````
 create table carrinho(
     id_produtos int not null,
@@ -53,37 +58,49 @@ create table carrinho(
     foreign key (id_produtos) references produtos(id_produtos)
 );
 ````
-Para testar 
+<h3>Para ver se tem algo dentro das tabelas</h3>
+
 ````
 select * from produtos;
 ````
 <h2>Criando a API</h2>
-Abrir o gitbash e usar a pasta no terminal
+
+<h3>Abrir o gitbash e usar a pasta no terminal</h3>
+
 ````
 cd lojaTecnico
 ````
-Criar o arquivo package.json para gerenciaros pacotes node 
+<h3>Criar o arquivo package.json para gerenciaros pacotes node</h3>
+
 ````
 npm init -y
 ````
-Instalar os 4 pacotes necessários para o uso das api`s
+<h3>Instalar os 4 pacotes necessários para o uso das api`s</h3>
+
 ````
 npm i express nodemon mysql2 cors
 ````
+
 O que cada pacote faz:
-*express: framework web para construção da infraestrutura da API;
-*nodemon: Monitora as mudanças nos arquivos do projeto e reinicia automaticamente o servidor do Node;
-*mysql2: Conectar e mandar comandos SQL para o banco;
-*cors: Mecanismo para adicionar cabeçalhos HTTP que informam aos navegadores para permitir que uma aplicação web seja executada em origem e acesse recursos de outra origem diferente
+<li>express: framework web para construção da infraestrutura da API;</li>
+<li>nodemon: Monitora as mudanças nos arquivos do projeto e reinicia automaticamente o servidor do Node;</li>
+<li>mysql2: Conectar e mandar comandos SQL para o banco;</li>
+<li>cors: Mecanismo para adicionar cabeçalhos HTTP que informam aos navegadores para permitir que uma aplicação web seja executada em origem e acesse recursos de outra origem diferente</li>
+
+
+
 
 <h2>Abrir o arquivo no VSCODE</h2>
+
 ````
 code . 
 ````
-Agora criar um folder dentro do html com o nome dp_config.js
+<h3>Agora criar um folder dentro do html com o nome dp_config.js</h3>
 
-Dentro do dp_config.js:
-*linkar o mysql com o VSCODE
+<h3>Dentro do dp_config.js:</h3>
+
+<li>linkar o mysql com o VSCODE</li>
+
 ````
 const mysql = require('mysql2')
 
