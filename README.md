@@ -1,10 +1,12 @@
 <h1>Portal do Oráculo</h1>
 
 <h2>Informações do trabalho</h2>
-*Banco de dados
-*Rota de Login
-*Rota de Cadastro de usuario
-*Rota de Cadastro de produtos
+<li>*Banco de dados</li>
+<li>*Rota de Login</li>
+<li>*Rota de Cadastro de usuario</li>
+<li>*Rota de Cadastro de produtos</li>
+
+
 
 <h2>Criando o banco de dados</h2>
 
