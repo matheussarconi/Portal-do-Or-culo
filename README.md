@@ -95,8 +95,9 @@ O que cada pacote faz:
 ````
 code . 
 ````
-<h3>Agora criar um folder dentro do html com o nome dp_config.js</h3>
+<h3>Agora criar um folder dentro do VSCODE com o nome SRC</h3>
 
+<h3>Dentro do SRC, vai criar um file com o nome de dp_config.js </h3>
 <h3>Dentro do dp_config.js:</h3>
 
 <li>linkar o mysql com o VSCODE</li>
@@ -122,4 +123,101 @@ connection.connect((err) => {
 
 module.exports = connection;
 ````
+<h3>Agora criar um file dentro do SRC com o nome server.js</h3>
 
+<h3>Dentro do server.js sera feito as nossas rotas, mas antes, vamos criar as portas:</h3>
+
+<li>Definir a porta</li>
+
+````
+const express = require('express');
+const cors = require('cors');
+````
+<li>Habilitar o cors e utilizar o json</li>
+
+````
+const porta = 3002;
+const app = express();
+````
+
+<li>Fazer uma conexão com o file criado anteriormente, o dp_config.js</li>
+
+````
+const connection = require('./dp_config');
+````
+<li>Agora, sera feito a primeira rota, a rota de cadastro, pra ela sera usado o post, pois ele server para adicionar o cadastro no banco de dados e verificar se é verdadeiro para o login. Será verificado também um verdadeiro ou falso pra caso na hora de testar esteja errado</li>
+
+
+````
+app.post('/usuario/cadastrar', (request, response) => {
+    let params = Array(
+        request.body.nomeUsuario,
+        request.body.email,
+        request.body.senha
+    );
+
+    let query = "INSERT INTO usuario(nomeUsuario, email, senha) values(?,?,?);";
+    connection.query(query, params, (err, results) => {
+        if(results) {
+            response
+            .status(201)
+            .json({
+                sucess: true,
+                message: "suceesso",
+                data: results
+            })
+
+        } else { 
+            response
+            .status(400)
+            .json({
+                sucess: false,
+                message: "sem suceesso",
+                data: err
+            })
+        }
+    })
+});
+````
+Body: {"nomeUsuario":"Guilherme",
+        "senha": "lalalalal",
+        "email": "guimm@gmail}
+<li>Agora é a rota de Login, onde o post verificara se existe ja o cadastro, e caso seja verdade ele traz como resposta o usuario</li>
+
+````
+app.post('/login/usuario', (req, res) =>{
+    const { email, senha } = req.body;
+    connection.query('SELECT * FROM usuario  where email = ? AND senha = ?', [email, senha], (err, results) => {
+        if(err){
+            res.status(401).json({sucesso: false, message: 'Erro ao logar', erro: err})
+        }else {
+            if(results.length > 0){
+                res.status(200).json({sucesso: true, message: 'Login realizado com sucesso', user: results[0]})
+            }else{
+                res.status(401).json({suceesso: false, message: 'Credenciais inválidas'})
+            }
+        }
+    });
+});
+````
+body: {"email":"blablabla",
+        "senha":"blablabla"}
+<li>E por ultimo, foi feita a rota de cadastrar produto</li>
+
+````
+app.post('/adm/cadastrar/produto', (req, res) => {
+    const { nomeProduto, precoProdutos, descricao, qtdDisponivel } = req.body;
+    const sql = 'INSERT INTO produtos (nomeProduto, precoProdutos, descricao, qtdDisponivel) VALUES (?, ?, ?, ?)';
+    connection.query(sql, [nomeProduto, precoProdutos, descricao, qtdDisponivel], (err, results) => {
+        if (err) {
+            res.json({ sucesso: false, message: 'Erro ao adicionar produto', erro: err});
+        } else {
+            res.json({ sucesso: true, message: 'Produto adicionado com sucesso', data:results });
+        }
+    });
+});
+````
+body: {"nomeProduto":"carro de luxo",
+        "precoProdutos": 2.20,
+        "descricao":"coisa doida",
+        "qtdDisponivel":20}
