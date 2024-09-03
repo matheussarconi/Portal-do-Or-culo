@@ -1,25 +1,25 @@
 <h1>Portal do Oráculo</h1>
 
 <h2>Informações do trabalho</h2>
-<li>*Banco de dados</li>
-<li>*Rota de Login</li>
-<li>*Rota de Cadastro de usuario</li>
-<li>*Rota de Cadastro de produtos</li>
+<li>Banco de dados</li>
+<li>Rota de Login</li>
+<li>Rota de Cadastro de usuario</li>
+<li>Rota de Cadastro de produtos</li>
 
 
 
 <h2>Criando o banco de dados</h2>
 
-Criando a databse
+<h3>Criando a databse</h3>
 ````
 create database PortalDoOraculo;
 ````
-Selecionar a database
+<h3>Selecionar a database</h3>
 ````
 use PortalDoOraculo;
 ````
 
-Criar a tabela de usuarios
+<h3>Criar a tabela de usuarios</h3>
 ````
 create table usuario(
     id_usuario int not null primary key auto_increment,
@@ -28,7 +28,7 @@ create table usuario(
     senha varchar(20) not null unique
 );
 ````
-Criar a tabela de produtos
+<h3>Criar a tabela de produtos</h3>
 ````
 create table produtos(
     id_produtos int not null primary key auto_increment,
