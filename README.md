@@ -55,4 +55,52 @@ Para testar
 ````
 select * from produtos;
 ````
-                      
+##Criando a API
+Abrir o gitbash e usar a pasta no terminal
+````
+cd lojaTecnico
+````
+Criar o arquivo package.json para gerenciaros pacotes node 
+````
+npm init -y
+````
+Instalar os 4 pacotes necessários para o uso das api`s
+````
+npm i express nodemon mysql2 cors
+````
+O que cada pacote faz:
+*express: framework web para construção da infraestrutura da API;
+*nodemon: Monitora as mudanças nos arquivos do projeto e reinicia automaticamente o servidor do Node;
+*mysql2: Conectar e mandar comandos SQL para o banco;
+*cors: Mecanismo para adicionar cabeçalhos HTTP que informam aos navegadores para permitir que uma aplicação web seja executada em origem e acesse recursos de outra origem diferente
+
+##Abrir o arquivo no VSCODE
+````
+code . 
+````
+Agora criar um folder dentro do html com o nome dp_config.js
+
+Dentro do dp_config.js:
+*linkar o mysql com o VSCODE
+````
+const mysql = require('mysql2')
+
+const connection = mysql.createConnection({
+host: 'localhost',
+user: 'root',
+password: 'root',
+database: 'PortalDoOraculo'
+
+});
+
+connection.connect((err) => {
+    if(err){
+        throw err;
+    } else{
+        console.log('Mysql conectado');
+    }
+})
+
+module.exports = connection;
+````
+
